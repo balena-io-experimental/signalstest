@@ -1,11 +1,11 @@
 ## Working base image (non-tini)
-## date tag is correct for 'intel-nuc'
 #FROM resin/%%RESIN_MACHINE_NAME%%-debian:jessie-20170603
 
 # Upstream works too
 #FROM debian:jessie
 
-# Non-working base image (tini)
+## Non-working base image (tini)
+## date tag is correct for 'intel-nuc'
 FROM resin/%%RESIN_MACHINE_NAME%%-debian:jessie-20170801
 
 COPY start.sh ./
