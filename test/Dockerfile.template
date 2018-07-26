@@ -1,0 +1,11 @@
+## Working base image (non-tini)
+FROM resin/%%RESIN_MACHINE_NAME%%-debian
+
+# # Upstream works too
+
+
+# # Non-working base image (tini)
+
+COPY start.sh ./
+
+CMD ["bash", "start.sh"]
