@@ -30,7 +30,7 @@ class Example():
   def run(self):
     while self.running:
       logging.info('running')
-      time.sleep(5)
+      time.sleep(1)
 
 if __name__ == '__main__':
   logFormat = '%(asctime)s [%(levelname)s] %(message)s'
