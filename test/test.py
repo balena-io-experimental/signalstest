@@ -13,12 +13,12 @@ class Example():
     signal.signal(signal.SIGTERM, self._term)
     signal.signal(signal.SIGUSR1, self._usr1)
 
-  def _int(self, signum=None, frame=None):
+  def _int(self, signum, frame):
     logging.info('SIGINT called')
     logging.debug('signum: %i', signum)
     self.running = False
 
-  def _term(self, signum=None, frame=None):
+  def _term(self, signum, frame):
     logging.info('SIGTERM called')
     logging.debug('signum: %i', signum)
     self.running = False
