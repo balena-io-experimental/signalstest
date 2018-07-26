@@ -11,23 +11,26 @@ class Example():
     self.running = True
     signal.signal(signal.SIGINT, self._int)
     signal.signal(signal.SIGTERM, self._term)
+    signal.signal(signal.SIGUSR1, self._usr1)
 
   def _int(self, signum=None, frame=None):
     logging.info('SIGINT called')
-    logging.debug('signum: ', signum)
-    logging.debug('frame: ', frame)
+    logging.debug('signum: %i', signum)
     self.running = False
 
   def _term(self, signum=None, frame=None):
     logging.info('SIGTERM called')
-    logging.debug('signum: ', signum)
-    logging.debug('frame: ', frame)
+    logging.debug('signum: %i', signum)
     self.running = False
+
+  def _usr1(self, signum, frame):
+    logging.info('SIGUSR received')
+    logging.debug('signum: %i', signum)
 
   def run(self):
     while self.running:
       logging.info('running')
-      time.sleep(1)
+      time.sleep(5)
 
 if __name__ == '__main__':
   logFormat = '%(asctime)s [%(levelname)s] %(message)s'
