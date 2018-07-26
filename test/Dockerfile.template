@@ -1,5 +1,6 @@
 ## Working base image (non-tini)
-FROM resin/%%RESIN_MACHINE_NAME%%-debian
+## date tag is correct for 'intel-nuc'
+FROM resin/%%RESIN_MACHINE_NAME%%-debian:slim-20170601
 
 # # Upstream works too
 
