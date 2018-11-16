@@ -1,7 +1,7 @@
 ## Working base image (non-tini)
 FROM resin/%%RESIN_MACHINE_NAME%%-debian:stretch
 
-ENV INITSYSTEM on
+#ENV INITSYSTEM on
 
 COPY start.sh ./
 
