@@ -1,12 +1,7 @@
 ## Working base image (non-tini)
-#FROM resin/%%RESIN_MACHINE_NAME%%-debian:jessie-20170603
+FROM resin/%%RESIN_MACHINE_NAME%%-debian:stretch
 
-# Upstream works too
-#FROM debian:jessie
-
-## Non-working base image (tini)
-## date tag is correct for 'intel-nuc'
-FROM resin/%%RESIN_MACHINE_NAME%%-debian:jessie-20170801
+ENV INITSYSTEM on
 
 COPY start.sh ./
 
