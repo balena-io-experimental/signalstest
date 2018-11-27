@@ -3,3 +3,4 @@ services:
   test:
     build: ./test
     privileged: true
+    stop_grace_period: 30s
