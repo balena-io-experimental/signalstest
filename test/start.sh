@@ -19,5 +19,5 @@ while :
 do
   echo "X=$X"
   X=`expr ${X} + 1`
-  sleep 1
+  sleep 1 & wait $!
 done
